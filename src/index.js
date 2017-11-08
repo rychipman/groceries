@@ -1,12 +1,13 @@
-import "polythene-css/dist/polythene.css";            // Component CSS
-import "polythene-css/dist/polythene-typography.css"; // Default Material Design styles including Roboto font
+import { addTypography } from "polythene-css";
+addTypography();
 
-import { addFastClick } from "polythene-fastclick"; // optional
-addFastClick()
+//import { addFastClick } from "polythene-fastclick"; // optional
+//addFastClick();
 
 import m from "mithril";
 import Demo from "./demo";
 import Layout from "./layout";
+import SearchApp from "./search-app";
 
 m.route(document.body, '/', {
     '/': {
@@ -16,6 +17,6 @@ m.route(document.body, '/', {
         render: () => m(Demo),
     },
     '/app': {
-        render: () => m(Layout),
+        render: () => m(Layout, m(SearchApp)),
     },
 });
