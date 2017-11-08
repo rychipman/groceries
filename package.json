@@ -1,11 +1,11 @@
 {
-  "name": "polythene-mithril-setup",
-  "description": "Polythene for Mithril setup example",
-  "version": "1.0.0-rc.8",
+  "name": "groceries",
+  "description": "record and search grocery purchases",
+  "version": "0.0.1",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ArthurClemens/polythene-mithril-setup.git"
+    "url": "https://github.com/rychipman/groceries"
   },
   "scripts": {
     "dev": "npm-run-all --parallel dev:watch dev:serve",
