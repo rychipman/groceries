@@ -13,7 +13,7 @@ var state = {
         'Thing 3',
         'Thing 4',
     ],
-    search: '',
+    search: stream(''),
     setSearch: (val) => state.search = val,
 };
 
@@ -26,7 +26,7 @@ let SearchCard = {
                         label: 'Search',
                         floatingLabel: true,
                         onChange: newState => {
-                            vnode.attrs.setSearch(newState.value);
+                            vnode.attrs.search(newState.value);
                         },
                     }),
                 },
@@ -36,7 +36,7 @@ let SearchCard = {
 
 let ResultsCard = {
     view: (vnode) => {
-        var search = vnode.attrs.search;
+        var search = vnode.attrs.search();
         var elts = vnode.attrs.items;
         var filtered = elts.filter(elt => elt.includes(search));
         var tiles = filtered.map(elt => m(Result, {title: elt}));
